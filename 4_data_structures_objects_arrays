@@ -83,3 +83,24 @@ console.log(prepend(10, prepend(20, null)));
 // → {value: 10, rest: {value: 20, rest: null}}
 console.log(nth(arrayToList([10, 20, 30]), 1));
 // → 20
+
+**DEEP COMPARISON BROKE MY BRAIN**
+
+function deepEqual (comp1, comp2) {
+  if (comp1 === comp2) {return true;}
+  if (typeof(comp1, comp2) == "object" && comp1, comp2 != null)
+  { 
+    //use object.keys to go over properties
+    let comp1Keys = Object.keys(comp1);
+    let comp2Keys = Object.keys(comp2);
+    //ensure both objects have the same number of properties
+    if (comp1Keys.length != comp2Keys.length) {return false;} 
+    for (let key of comp1Keys) {
+      //loop through object to match property names & values
+      if (!comp2Keys.includes(key) || !deepEqual(comp1[key], comp2[key])) {
+        return false;}    
+    }        
+    return true;  
+  }
+  return "grenache";
+}
