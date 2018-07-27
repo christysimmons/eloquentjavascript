@@ -7,3 +7,11 @@ let arrays = [[1, 2, 3], [4, 5], [6]];
 
 arrays.reduce((a,b) => {return a.concat(b)}, []);
 
+**Your Own Loop**
+
+function loop(val, test, update, body) {
+  while (test(val)) {
+    body(val);
+    val = update(val);
+  }  
+}
