@@ -27,6 +27,5 @@ function every1(arto, test) {
 }
 
 function every(arto, test) {
-  return !arto.some(elem => !test(elem));
-  
+  return !arto.some(elem => !test(elem));  
 }
