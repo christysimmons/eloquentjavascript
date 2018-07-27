@@ -15,3 +15,18 @@ function loop(val, test, update, body) {
     val = update(val);
   }  
 }
+
+
+**Everything**
+
+function every1(arto, test) {
+  for (let elem of arto) {
+   if (test(elem) != true) {return false;}
+  }
+  return true;
+}
+
+function every(arto, test) {
+  return !arto.some(elem => !test(elem));
+  
+}
