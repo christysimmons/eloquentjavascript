@@ -26,3 +26,33 @@ function compareRobots(robot1, memory1, robot2, memory2) {
 
 **Robot Efficiency**
 
+
+
+
+**Persistent Group**
+
+class PGroup {
+  constructor(elems) {
+    this.elems = elems;
+  }
+  
+  add(item) {
+    if (!this.elems.includes(item)) {
+      return new PGroup(this.members.concat([item]));
+    } return this;
+  }
+  
+  delete(item) {
+    if (this.elems.includes(item)) {
+      return new PGroup(this.elems.filter(e => e !== item));
+    }
+    
+  }
+  
+  has(item) {
+    return this.elems.includes(item);
+  }
+  
+}
+
+PGroup.empty = new PGroup([]);
