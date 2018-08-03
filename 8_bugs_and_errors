@@ -1,0 +1,26 @@
+****Bugs and Errors****
+
+**Retry**
+
+function reliableMultiply(a, b) {
+  for (;;) {
+    try {return primitiveMultiply(a, b);
+        }
+    catch (err) {
+      if (err == !MultiplicatorUnitFailure) throw err;
+    }
+  }
+}
+
+**The Locked Box**
+
+function withBoxUnlocked(body) {
+  boxInit = box.locked;
+  if (box.locked == true) {
+    box.unlock();
+    body; 
+  } else {body;}
+   
+  box.locked = boxInit;
+  return box;
+}
