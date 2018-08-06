@@ -40,3 +40,9 @@ function verify(regexp, yes, no) {
     console.log(`Unexpected match for '${str}'`);
   }
 }
+
+
+**Numbers again**
+
+// Fill in this regular expression.
+let number = /^[+-]?(\d+(\.\d*)?|(\.\d+))(e[+-]?\d+)?$/i;
