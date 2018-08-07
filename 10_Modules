@@ -1,0 +1,46 @@
+****Chapter 10: Modules****
+
+**A Modular Robot**(Unfinished)
+
+Road Module 
+
+roads
+buildGraph
+
+Village Module
+
+VillageState
+roadGraph
+
+
+runRobot
+randomPick
+randomRobot
+mailRoute
+
+
+Robot Module:
+
+routeRobot
+findRoute
+goalOrientedRobot
+
+**Roads Module**
+
+const {buildGraph} = require("./graph");
+
+const roads = [
+  "Alice's House-Bob's House",   "Alice's House-Cabin",
+  "Alice's House-Post Office",   "Bob's House-Town Hall",
+  "Daria's House-Ernie's House", "Daria's House-Town Hall",
+  "Ernie's House-Grete's House", "Grete's House-Farm",
+  "Grete's House-Shop",          "Marketplace-Farm",
+  "Marketplace-Post Office",     "Marketplace-Shop",
+  "Marketplace-Town Hall",       "Shop-Town Hall"
+];
+
+exports.roadGraph = buildGraph(roads.map(rte => rte.split("-")));
+
+**Circular Dependencies**
+
+The called modules are stored in cache. If anything is overwritten, you would see stange or unexpected results. You may see a stack overflow if there's an unbroken call loop.
