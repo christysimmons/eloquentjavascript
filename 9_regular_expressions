@@ -1,7 +1,7 @@
 
 // Fill in the regular expressions
 
-verify(/ca[r|t]/,
+verify(/ca[rt]/,
        ["my car", "bad cats"],
        ["camper", "high art"]);
 
@@ -17,7 +17,7 @@ verify(/(ious)\b/,
        ["how delicious", "spacious room"],
        ["ruinous", "consciousness"]);
 
-verify(/\s[\.|,|;|:]/,
+verify(/\s[\.,;:]/,
        ["bad punctuation ."],
        ["escape the period"]);
 
